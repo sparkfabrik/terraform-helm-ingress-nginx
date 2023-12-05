@@ -10,6 +10,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ---
 
+## [0.2.1] - 2023-12-05
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.2.0...0.2.1)
+
+### Changed
+
+- Removed `helm` provider config and variables.
+
 ## [0.2.0] - 2023-12-05
 
 [Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.1.0...0.2.0)
