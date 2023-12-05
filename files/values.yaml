@@ -14,8 +14,6 @@ controller:
     maxReplicas: 3
     targetCPUUtilizationPercentage: 80
     targetMemoryUtilizationPercentage: 80
-  extraArgs:
-    annotations-prefix: ingress.kubernetes.io
   config:
     body-size: "0"
     hsts-include-subdomains: "true"

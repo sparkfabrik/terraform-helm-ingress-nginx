@@ -28,7 +28,7 @@ resource "helm_release" "this" {
   namespace  = var.create_namespace ? kubernetes_namespace_v1.this[0].metadata[0].name : data.kubernetes_namespace_v1.this[0].metadata[0].name
 
   values = concat(
-    [file("${path.module}/values.yaml")],
+    [file("${path.module}/files/values.yaml")],
     var.additional_values
   )
 }
