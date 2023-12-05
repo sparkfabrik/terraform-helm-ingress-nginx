@@ -12,6 +12,8 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [0.2.0] - 2023-12-05
 
+[Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.1.0...0.2.0)
+
 ### Changed
 
 - `annotations-prefix` removed from values file.
