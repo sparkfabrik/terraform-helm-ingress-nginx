@@ -23,7 +23,7 @@ controller:
     proxy-buffer-size: "128k"
     proxy-connect-timeout: "15"
     proxy-read-timeout: "600"
-    proxy-send-imeout: "600"
+    proxy-send-timeout: "600"
     server-name-hash-bucket-size: "256"
     ssl-reject-handshake: "true"
   service:
