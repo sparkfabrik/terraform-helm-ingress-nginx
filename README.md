@@ -25,13 +25,10 @@ This is Terraform module to install and configure the Nginx Ingress Controller.
 |------|-------------|------|---------|:--------:|
 | <a name="input_additional_values"></a> [additional\_values](#input\_additional\_values) | Additional values to pass to the helm chart | `list(string)` | `[]` | no |
 | <a name="input_chart_version"></a> [chart\_version](#input\_chart\_version) | Chart version of the ingress controller | `string` | n/a | yes |
-| <a name="input_cluster_ca_certificate"></a> [cluster\_ca\_certificate](#input\_cluster\_ca\_certificate) | PEM-encoded root certificates bundle for TLS authentication | `string` | n/a | yes |
 | <a name="input_create_namespace"></a> [create\_namespace](#input\_create\_namespace) | Create namespace for the ingress controller. If false, the namespace must be created before using this module | `bool` | `true` | no |
 | <a name="input_helm_release_name"></a> [helm\_release\_name](#input\_helm\_release\_name) | Name of the helm release | `string` | `"ingress-nginx"` | no |
-| <a name="input_host"></a> [host](#input\_host) | The hostname (in form of URI) of Kubernetes master | `string` | n/a | yes |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Namespace of the ingress controller | `string` | n/a | yes |
 | <a name="input_namespace_additional_labels"></a> [namespace\_additional\_labels](#input\_namespace\_additional\_labels) | Additional labels for the namespace of the ingress controller | `map(string)` | `{}` | no |
-| <a name="input_token"></a> [token](#input\_token) | Token to authenticate a service account | `string` | n/a | yes |
 
 ## Outputs
 

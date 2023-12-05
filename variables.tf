@@ -20,21 +20,6 @@ variable "namespace_additional_labels" {
   default     = {}
 }
 
-variable "host" {
-  description = "The hostname (in form of URI) of Kubernetes master"
-  type        = string
-}
-
-variable "cluster_ca_certificate" {
-  description = "PEM-encoded root certificates bundle for TLS authentication"
-  type        = string
-}
-
-variable "token" {
-  description = "Token to authenticate a service account"
-  type        = string
-}
-
 variable "additional_values" {
   description = "Additional values to pass to the helm chart"
   type        = list(string)
