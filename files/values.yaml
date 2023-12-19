@@ -1,13 +1,9 @@
-# https://github.com/kubernetes/ingress-nginx/blob/helm-chart-4.8.3/charts/ingress-nginx/values.yaml
+# https://github.com/kubernetes/ingress-nginx/blob/helm-chart-4.8.4/charts/ingress-nginx/values.yaml
 controller:
   resources:
     requests:
       cpu: 50m
       memory: 64Mi
-  metrics:
-    enabled: true
-    serviceMonitor:
-      enabled: true
   autoscaling:
     enabled: "true"
     minReplicas: 1
@@ -30,4 +26,3 @@ controller:
     externalTrafficPolicy: "Local"
 defaultBackend:
   enabled: true
-
