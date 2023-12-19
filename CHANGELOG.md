@@ -8,7 +8,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
----
+## [0.3.0] - 2023-12-019
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.2.2...0.3.0)
+
+### Changed
+
+- Feature: turn off metrics by default.
 
 ## [0.2.2] - 2023-12-05
 
