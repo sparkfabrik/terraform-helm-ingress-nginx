@@ -21,8 +21,13 @@ controller:
     proxy-read-timeout: "600"
     proxy-send-timeout: "600"
     server-name-hash-bucket-size: "256"
+    ssl-redirect: "true"
     ssl-reject-handshake: "true"
   service:
     externalTrafficPolicy: "Local"
 defaultBackend:
   enabled: true
+  resources:
+    requests:
+      cpu: 10m
+      memory: 20Mi
