@@ -8,7 +8,16 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-## [0.3.0] - 2023-12-019
+## [0.4.0] - 2023-12-22
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.3.0...0.4.0)
+
+### Changed
+
+- Feature: add `ssl-redirect` configuration.
+- Feature: add requests in `defaultBackend`.
+
+## [0.3.0] - 2023-12-19
 
 [Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.2.2...0.3.0)
 
