@@ -8,6 +8,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.5.1] - 2024-05-13
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.5.0...0.5.1)
+
+### Changed
+
+- Fix `podAntiAffinity` configuration.
+
 ## [0.5.0] - 2024-05-13
 
 [Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.4.0...0.5.0)
