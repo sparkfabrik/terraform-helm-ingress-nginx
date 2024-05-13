@@ -1,0 +1,63 @@
+# https://github.com/kubernetes/ingress-nginx/blob/helm-chart-4.10.1/charts/ingress-nginx/values.yaml
+
+%{~ if length(common_labels) > 0 }
+%{~ for lbl_key, lbl_value in common_labels }
+commonLabels:
+  ${lbl_key}: "${lbl_value}"
+%{~ endfor ~}
+%{~ endif ~}
+
+controller:
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+  autoscaling:
+    enabled: "true"
+    minReplicas: ${ingress_nginx_controller_min_replicas}
+    maxReplicas: ${ingress_nginx_controller_max_replicas}
+    targetCPUUtilizationPercentage: 80
+    targetMemoryUtilizationPercentage: 80
+  config:
+    body-size: "0"
+    hsts-include-subdomains: "true"
+    hsts-max-age: "63072000"
+    hsts-preload: "true"
+    proxy-body-size: "0"
+    proxy-buffer-size: "128k"
+    proxy-connect-timeout: "15"
+    proxy-read-timeout: "600"
+    proxy-send-timeout: "600"
+    server-name-hash-bucket-size: "256"
+    ssl-redirect: "true"
+    ssl-reject-handshake: "true"
+  service:
+    externalTrafficPolicy: "Local"
+  %{~ if set_controller_default_pod_anti_affinity }
+  # Set the default antiaffinity. If you eneable the hpa, the pods will be distributed in different nodes.
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                  - ingress-nginx
+              - key: app.kubernetes.io/instance
+                operator: In
+                values:
+                  - ingress-nginx
+              - key: app.kubernetes.io/component
+                operator: In
+                values:
+                  - controller
+          topologyKey: "kubernetes.io/hostname"
+  %{~ endif ~}
+
+defaultBackend:
+  enabled: true
+  resources:
+    requests:
+      cpu: 10m
+      memory: 20Mi
