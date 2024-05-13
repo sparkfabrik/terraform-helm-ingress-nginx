@@ -8,6 +8,17 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.5.0] - 2024-05-13
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.4.0...0.5.0)
+
+### Added
+
+- Default value for chart version. The values file shipped with the module refers to the declared version of the chart.
+- `podAntiAffinity` configuration enabled by default. It is possible to disable it by setting the new `set_default_pod_anti_affinity` variable to `false`.
+- Add the `common_labels` variable to allow the user to set common labels for all resources created by the chart.
+- Add the `ingress_nginx_controller_min_replicas` and `ingress_nginx_controller_max_replicas` variables to easily set the minimum and maximum number of replicas for the controller pods.
+
 ## [0.4.0] - 2023-12-22
 
 [Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.3.0...0.4.0)

@@ -28,7 +28,17 @@ resource "helm_release" "this" {
   namespace  = var.create_namespace ? kubernetes_namespace_v1.this[0].metadata[0].name : data.kubernetes_namespace_v1.this[0].metadata[0].name
 
   values = concat(
-    [file("${path.module}/files/values.yaml")],
+    [
+      templatefile(
+        "${path.module}/files/values.yaml.tftpl",
+        {
+          common_labels                            = var.common_labels
+          ingress_nginx_controller_min_replicas    = var.ingress_nginx_controller_min_replicas
+          ingress_nginx_controller_max_replicas    = var.ingress_nginx_controller_max_replicas
+          set_controller_default_pod_anti_affinity = var.set_controller_default_pod_anti_affinity
+        }
+      )
+    ],
     var.additional_values
   )
 }
