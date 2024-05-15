@@ -8,6 +8,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.5.2] - 2024-05-15
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.5.1...0.5.2)
+
+### Changed
+
+- Fix `controller.autoscaling.enabled` default value removing quotes.
+
 ## [0.5.1] - 2024-05-13
 
 [Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.5.0...0.5.1)
