@@ -13,7 +13,7 @@ controller:
       cpu: 50m
       memory: 64Mi
   autoscaling:
-    enabled: "true"
+    enabled: true
     minReplicas: ${ingress_nginx_controller_min_replicas}
     maxReplicas: ${ingress_nginx_controller_max_replicas}
     targetCPUUtilizationPercentage: 80
