@@ -33,26 +33,16 @@ controller:
     ssl-reject-handshake: "true"
   service:
     externalTrafficPolicy: "Local"
-  %{~ if set_controller_default_pod_anti_affinity }
-  # Set the default antiaffinity. If you eneable the hpa, the pods will be distributed in different nodes.
-  affinity:
-    podAntiAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        - labelSelector:
-            matchExpressions:
-              - key: app.kubernetes.io/name
-                operator: In
-                values:
-                  - ${chart_name}
-              - key: app.kubernetes.io/instance
-                operator: In
-                values:
-                  - ${release_name}
-              - key: app.kubernetes.io/component
-                operator: In
-                values:
-                  - controller
-          topologyKey: "kubernetes.io/hostname"
+  %{~ if set_controller_default_topology_spread_constraints }
+  topologySpreadConstraints:
+    - maxSkew: ${set_controller_default_topology_spread_constraints_max_skew}
+      topologyKey: "${set_controller_default_topology_spread_constraints_topology_key}"
+      whenUnsatisfiable: "${set_controller_default_topology_spread_constraints_when_unsatisfiable}"
+      labelSelector:
+        matchLabels:
+          app.kubernetes.io/name: ${chart_name}
+          app.kubernetes.io/instance: ${release_name}
+          app.kubernetes.io/component: controller
   %{~ endif ~}
 
 defaultBackend:

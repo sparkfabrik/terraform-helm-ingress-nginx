@@ -51,8 +51,26 @@ variable "ingress_nginx_controller_max_replicas" {
   default     = 3
 }
 
-variable "set_controller_default_pod_anti_affinity" {
-  description = "Set the podAntiAffinity for the ingress controller."
+variable "set_controller_default_topology_spread_constraints" {
+  description = "Set the topologySpreadConstraints for the ingress controller."
   type        = bool
   default     = true
+}
+
+variable "set_controller_default_topology_spread_constraints_max_skew" {
+  description = "Set the topologyKey in the topologySpreadConstraints for the ingress controller."
+  type        = number
+  default     = 1
+}
+
+variable "set_controller_default_topology_spread_constraints_topology_key" {
+  description = "Set the topologyKey in the topologySpreadConstraints for the ingress controller."
+  type        = string
+  default     = "kubernetes.io/hostname"
+}
+
+variable "set_controller_default_topology_spread_constraints_when_unsatisfiable" {
+  description = "Set the whenUnsatisfiable policy in the topologySpreadConstraints for the ingress controller."
+  type        = string
+  default     = "ScheduleAnyway"
 }

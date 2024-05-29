@@ -8,6 +8,16 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.6.0] - 2024-05-29
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.5.2...0.6.0)
+
+### Changed
+
+- ⚠️ BREAKING CHANGE: use `topologySpreadConstraints` instead of `podAntiAffinity` for better control over pod distribution.
+
+If you have not set the old `set_controller_default_pod_anti_affinity` varible, you can safely upgrade to this version. Otherwise, you can turn off the `topologySpreadConstraints` feature by setting the new `set_controller_default_topology_spread_constraints` to `false`.
+
 ## [0.5.2] - 2024-05-15
 
 [Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.5.1...0.5.2)
