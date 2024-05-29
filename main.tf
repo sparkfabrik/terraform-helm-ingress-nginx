@@ -36,10 +36,13 @@ resource "helm_release" "this" {
       templatefile(
         "${path.module}/files/values.yaml.tftpl",
         {
-          common_labels                            = var.common_labels
-          ingress_nginx_controller_min_replicas    = var.ingress_nginx_controller_min_replicas
-          ingress_nginx_controller_max_replicas    = var.ingress_nginx_controller_max_replicas
-          set_controller_default_pod_anti_affinity = var.set_controller_default_pod_anti_affinity
+          common_labels                                                         = var.common_labels
+          ingress_nginx_controller_min_replicas                                 = var.ingress_nginx_controller_min_replicas
+          ingress_nginx_controller_max_replicas                                 = var.ingress_nginx_controller_max_replicas
+          set_controller_default_topology_spread_constraints                    = var.set_controller_default_topology_spread_constraints
+          set_controller_default_topology_spread_constraints_max_skew           = var.set_controller_default_topology_spread_constraints_max_skew
+          set_controller_default_topology_spread_constraints_topology_key       = var.set_controller_default_topology_spread_constraints_topology_key
+          set_controller_default_topology_spread_constraints_when_unsatisfiable = var.set_controller_default_topology_spread_constraints_when_unsatisfiable
 
           # Variables for creating the selector labels.
           # If you use `nameOverride` in your values, you should use that instead of `chart_name`.

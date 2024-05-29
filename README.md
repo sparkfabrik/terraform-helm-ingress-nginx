@@ -32,7 +32,10 @@ This is Terraform module to install and configure the Nginx Ingress Controller.
 | <a name="input_ingress_nginx_controller_min_replicas"></a> [ingress\_nginx\_controller\_min\_replicas](#input\_ingress\_nginx\_controller\_min\_replicas) | Minimum number of replicas for the ingress controller. | `number` | `1` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | Namespace of the ingress controller. | `string` | n/a | yes |
 | <a name="input_namespace_additional_labels"></a> [namespace\_additional\_labels](#input\_namespace\_additional\_labels) | Additional labels for the namespace of the ingress controller. | `map(string)` | `{}` | no |
-| <a name="input_set_controller_default_pod_anti_affinity"></a> [set\_controller\_default\_pod\_anti\_affinity](#input\_set\_controller\_default\_pod\_anti\_affinity) | Set the podAntiAffinity for the ingress controller. | `bool` | `true` | no |
+| <a name="input_set_controller_default_topology_spread_constraints"></a> [set\_controller\_default\_topology\_spread\_constraints](#input\_set\_controller\_default\_topology\_spread\_constraints) | Set the topologySpreadConstraints for the ingress controller. | `bool` | `true` | no |
+| <a name="input_set_controller_default_topology_spread_constraints_max_skew"></a> [set\_controller\_default\_topology\_spread\_constraints\_max\_skew](#input\_set\_controller\_default\_topology\_spread\_constraints\_max\_skew) | Set the topologyKey in the topologySpreadConstraints for the ingress controller. | `number` | `1` | no |
+| <a name="input_set_controller_default_topology_spread_constraints_topology_key"></a> [set\_controller\_default\_topology\_spread\_constraints\_topology\_key](#input\_set\_controller\_default\_topology\_spread\_constraints\_topology\_key) | Set the topologyKey in the topologySpreadConstraints for the ingress controller. | `string` | `"kubernetes.io/hostname"` | no |
+| <a name="input_set_controller_default_topology_spread_constraints_when_unsatisfiable"></a> [set\_controller\_default\_topology\_spread\_constraints\_when\_unsatisfiable](#input\_set\_controller\_default\_topology\_spread\_constraints\_when\_unsatisfiable) | Set the whenUnsatisfiable policy in the topologySpreadConstraints for the ingress controller. | `string` | `"ScheduleAnyway"` | no |
 
 ## Outputs
 
