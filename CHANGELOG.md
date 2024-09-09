@@ -14,7 +14,7 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Changed
 
-- Update to use Ingress-nginx 1.11.2 to solve CVE-2024-7646 (https://github.com/kubernetes/kubernetes/issues/126744) 
+- Update to use Ingress-nginx 1.11.2 to solve [CVE-2024-7646](https://github.com/kubernetes/kubernetes/issues/126744).
 
 ## [0.6.0] - 2024-05-29
 
