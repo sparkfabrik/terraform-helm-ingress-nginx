@@ -8,6 +8,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.8.0] - 2025-03-25
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.7.0...0.8.0)
+
+### Changed
+
+- Update to use Ingress-nginx 1.12.1 to solve [CVE-2025-1974](https://kubernetes.io/blog/2025/03/24/ingress-nginx-cve-2025-1974/).
+
 ## [0.7.0] - 2024-09-09
 
 [Compare with previous version](https://github.com/sparkfabrik/terraform-helm-ingress-nginx/compare/0.6.0...0.7.0)
