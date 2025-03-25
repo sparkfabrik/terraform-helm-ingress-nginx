@@ -7,7 +7,7 @@ variable "helm_release_name" {
 variable "chart_version" {
   description = "Chart version of the ingress controller. Consider the default value the reference version of the module and the base of the values.yaml.tftpl file."
   type        = string
-  default     = "4.11.2"
+  default     = "4.12.1"
 }
 
 variable "create_namespace" {
